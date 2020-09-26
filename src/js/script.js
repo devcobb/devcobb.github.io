@@ -21,12 +21,7 @@ let anim = null;
     loadingScreen();
 
     window.addEventListener("load", hideLoadingScreen)
-    setTimeout(
-        () => {
-            document.querySelector(".headerDot").classList.remove("jump")
-        },
-        2000
-    );
+
 
     document.querySelectorAll("#menu li").forEach(menuElem => menuElem.addEventListener("click", handleMenu));
     document.querySelectorAll("#dotsMenu li").forEach(menuElem => menuElem.addEventListener("click", handleMenu));
@@ -48,6 +43,7 @@ function hideLoadingScreen(){
     setTimeout(
         () => {
             document.querySelector("#loadingScreen").remove();
+            document.querySelector(".headerDot").classList.add("jump")
         },
         300
     )
