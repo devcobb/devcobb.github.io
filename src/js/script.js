@@ -28,10 +28,6 @@ let anim = null;
         2000
     );
 
-    if(window.screen.width <= 1024){
-        document.querySelector("#dotsMenu li").classList.toggle("filledDotInv");
-    }
-
     document.querySelectorAll("#menu li").forEach(menuElem => menuElem.addEventListener("click", handleMenu));
     document.querySelectorAll("#dotsMenu li").forEach(menuElem => menuElem.addEventListener("click", handleMenu));
     document.querySelectorAll(".container").forEach(cont => cont.addEventListener("wheel", handleScroll));
@@ -115,7 +111,7 @@ function mobileMenuHandle(e){
 
 function fillDot(){
     document.querySelectorAll("#dotsMenu li").forEach(dot => dot.removeAttribute("class"));
-    window.screen.width <= 1024 ? document.querySelector(`#dotsMenu li[data-id='${document.body.dataset.page}']`).className = "filledDotInv" : document.querySelector(`#dotsMenu li[data-id='${document.body.dataset.page}']`).className = "filledDot";
+    document.querySelector(`#dotsMenu li[data-id='${document.body.dataset.page}']`).className = "filledDot";
 }
 
 function hidePage(page){
