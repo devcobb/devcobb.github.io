@@ -18,6 +18,9 @@ let circlesAnimNum = 100;
 let anim = null;
 
 (function init() {
+    loadingScreen();
+
+    window.addEventListener("load", hideLoadingScreen)
     setTimeout(
         () => {
             document.querySelector(".headerDot").classList.remove("jump")
@@ -35,6 +38,24 @@ let anim = null;
     document.querySelectorAll("#mobileMenu .mobileMenuElem").forEach(elem => elem.addEventListener("click", mobileMenuHandle))
     document.querySelector("#mobileMenuBtn").addEventListener("click", mobileMenuToggle);
 })();
+
+function loadingScreen(){
+    let screen = document.createElement("div");
+
+    screen.id = "loadingScreen";
+    screen.innerHTML = `<img src="../img/logo.png" />`;
+    document.body.appendChild(screen)
+}
+
+function hideLoadingScreen(){
+    document.querySelector("#loadingScreen").style.opacity = "0";
+    setTimeout(
+        () => {
+            document.querySelector("#loadingScreen").remove();
+        },
+        300
+    )
+}
 
 function handleMenu(e){
     let nextPage = pages.filter(page => {
