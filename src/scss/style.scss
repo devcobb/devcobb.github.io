@@ -2,9 +2,9 @@ $grey: #262626;
 $darkgrey: #1d1d1d;
 $white: #ffffff;
 
-//Fix font weight on mobile devices on IOS
-h1,h2,h3,h4,h5,h6 {
-    font-family: vivaldi;
+
+h1, h2, h3, h4, h5, h6 { 
+    /*reset for mobile browsers */
     font-weight: normal;
 }
 
@@ -167,9 +167,18 @@ h1,h2,h3,h4,h5,h6 {
         width: 15% !important;
     }
     .row{
-        width:50% !important;
+        top:0 !important;
+        left:0 !important;
+        width:100% !important;
+        border-left: none !important;
+        height: auto !important;
+        border-bottom:20px solid $darkgrey;
+        background-image: none !important;
+        h2{
+            margin-top:0 !important;
+            margin-bottom: 5% !important;
+        }
     }
-    
     h1{
         width: 50% !important;
         height: 6% !important;
