@@ -2,6 +2,12 @@ $grey: #262626;
 $darkgrey: #1d1d1d;
 $white: #ffffff;
 
+//Fix font weight on mobile devices on IOS
+h1,h2,h3,h4,h5,h6 {
+    font-family: vivaldi;
+    font-weight: normal;
+}
+
 @mixin flexCentering($justify, $align){
     display: flex;
     justify-content: $justify;

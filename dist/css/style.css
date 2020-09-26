@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: vivaldi;
+  font-weight: normal;
+}
+
 @media only screen and (max-width: 1600px) {
   .row .sectionHeader {
     margin-top: 25%;
