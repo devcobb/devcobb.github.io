@@ -1,25 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakub Michalczyk</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/icons/icon.png">
 </head>
-<body>
-    <div id="bg">
-        <nav id="menu">
-            <ul>
-                <li></li>
-                <li>O mnie</li>
-                <li>Technologie</li>
-                <li>Projekty</li>
-            </ul>
-        </nav>
+
+<body data-page="0">
+    <div id="logo">
+        <img src="../img/logo.png" />
+    </div>
+    <nav id="dotsMenu">
+        <ul>
+            <li data-id="0" class="filledDot"></li>
+            <li data-id="1"></li>
+            <li data-id="2"></li>
+        </ul>
+    </nav>
+    <nav id="mobileMenuBtn" data-mode="hidden">
+        <div class="mobileMenuElem" id="firstElem"></div>
+        <div class="mobileMenuElem" id="midElem"></div>
+        <div class="mobileMenuElem" id="lastElem"></div>
+    </nav>
+    <div id="mobileMenu">
+        <div class="mobileMenuElem active" data-id="0">Strona Główna</div>
+        <div class="mobileMenuElem" data-id="1">O mnie</div>
+        <div class="mobileMenuElem" data-id="2">Projekty</div>
+    </div>
+    <nav id="menu">
+        <ul>
+            <li data-id="0">Strona Główna</li>
+            <li data-id="1">O mnie</li>
+            <li data-id="2">Projekty</li>
+        </ul>
+    </nav>
+    <div id="bg" class="container">
         <h1>
+            <div class="headerDot delay jump"></div>
             Jakub Michalczyk
         </h1>
-        <footer id="foot"></footer>
+        <div id="fog1" class="fog"></div>
+        <div id="fog2" class="fog"></div>
     </div>
+    <section id="about" class="container">
+        <canvas></canvas>
+        <div class="row">
+            <div id="desc">
+                <h2 class="sectionHeader">Cześć,</h2>
+                <p class="paragraph">
+                    Jestem Kuba. Ukończyłem technikum na profilu informatyki, dzięki czemu mam <span>wiedze z zakresu
+                        sprzętu komputerowego, peryferii</span>, ale także <span>sieci komputerowej</span> czy
+                    <span>administracji baz danych.</span>
+                    Pośród szerokiego wachlarzu tematów na zajęciach, to tworzenie stron internetowych było dla mnie
+                    najbardziej interesujące. W szkole poznałem same podstawy, dalej <span>uczyłem się na własną
+                        rękę</span>.
+                    Zajmuję się tym od <span>trzech lat</span> w zaciszu domowym. Stopniowo poznając nowe technologie i
+                    zwiększając swoje umiejętności, tworzyłem nowe projekty, wykorzystywałem do nich takie technologie
+                    jak
+                </p>
+                <ul>
+                    <li>HTML,</li>
+                    <li>CSS wraz z preprocesorem SCSS,</li>
+                    <li>JavaScript,</li>
+                    <li>React</li>
+                </ul>
+                <p class="paragraph">
+                    Z kolei narzędzia, które towarzyszyły mi przy ich tworzeniu to <span>GIT</span> czy
+                    <span>npm</span>.
+                    Gotów jestem do <span>dalszej nauki i rozwoju.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="container">
+        <div id="projectBox">
+            <div class="projectRow">
+                <a href="../deliciae/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="0">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                            </div>
+                        </div>
+                        <img id="delicae" src="../img/deliciae.JPG" />
+                    </div>
+                </a>
+                <a href="../calendation/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="1">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                            </div>
+                        </div>
+                        <img id="calendation" src="../img/calendation.JPG" />
+                    </div>
+                </a>
+                <a href="https://github.com/devcobb/Filmer" target="_blank">
+                    <div class="projectBox" data-id="2">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">react</div>
+                            </div>
+                        </div>
+                        <img id="filmer" src="../img/filmer.JPG" />
+                    </div>
+                </a>
+            </div>
+            <div class="projectRow">
+                <a href="https://github.com/devcobb/Financer" target="_blank">
+                    <div class="projectBox" data-id="3">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">react</div>
+                            </div>
+                        </div>
+                        <img id="financer" src="../img/financer.JPG" />
+                    </div>
+                </a>
+                <a href="../tubedit/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="4">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                                <div class="projectTag">youtube api</div>
+                            </div>
+                        </div>
+                        <img id="tubedit" src="../img/tubedit.JPG" />
+                    </div>
+                </a>
+                <a href="../crime/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="5">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">localstorage</div>
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                                <div class="projectTag">randomuser api</div>
+                                <div class="projectTag">restcountries api</div>
+                            </div>
+                        </div>
+                        <img id="crime" src="../img/crime.JPG" />
+                    </div>
+                </a>
+            </div>
+            <div class="projectRow">
+                <a href="../cardmemory/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="6">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                            </div>
+                        </div>
+                        <img id="cardmemory" src="../img/cardmemory.JPG" />
+                    </div>
+                </a>
+                <a href="../quiz/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="7">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                                <div class="projectTag">quiz api</div>
+                            </div>
+                        </div>
+                        <img id="quiz" src="../img/quiz.JPG" />
+                    </div>
+                </a>
+                <a href="../tanky/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="8">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                                <div class="projectTag">gamepad api</div>
+                            </div>
+                        </div>
+                        <img id="tanky" src="../img/tanky.JPG" />
+                    </div>
+                </a>
+            </div>
+            <div class="projectRow">
+                <a href="../evolution/html/index.html" target="_blank">
+                    <div class="projectBox" data-id="9">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                                <div class="projectTag">canvas</div>
+                            </div>
+                        </div>
+                        <img id="evolution" src="../img/evolution.JPG" />
+                    </div>
+                </a>
+                <a href="https://github.com/devcobb/Musician-Map" target="_blank">
+                    <div class="projectBox" data-id="10">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">react</div>
+                                <div class="projectTag">openlayers</div>
+                            </div>
+                        </div>
+                        <img id="musicianmap" src="../img/musicianmap.JPG" />
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="projectBox" data-id="11">
+                        <div class="projectOverlayer">
+                            <div class="imgBox">
+                                <img src="../img/logo.png">
+                            </div>
+                            <div class="tagBox">
+                                <div class="projectTag">html5</div>
+                                <div class="projectTag">css3</div>
+                                <div class="projectTag">javascript</div>
+                            </div>
+                        </div>
+                        <img id="portfolio" src="../img/portoflio.JPG" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="skillsBox">
+            <div class="skillBox">
+                <img src="../img/icons/html.png" />
+            </div>
+            <div class="skillBox">
+                <img src="../img/icons/css.png" />
+            </div>
+            <div class="skillBox">
+                <img src="../img/icons/js.png" />
+            </div>
+            <div class="skillBox">
+                <img src="../img/icons/react.png" />
+            </div>
+            <div class="skillBox">
+                <img src="../img/icons/git.png" />
+            </div>
+            <div class="skillBox">
+                <img src="../img/icons/npm.png" />
+            </div>
+        </div>
+        <div id="rightBar">
+            <h2 class="sectionHeader">Kontakt.</h2>
+            <div id="contactInfo">
+                <div class="contactWrapper">
+                    <a href="https://github.com/devcobb">
+                        <div class="contactBox">
+                            GitHub
+                            <img src="../img/icons/github.png" />
+                        </div>
+                    </a>
+                </div>
+                <div class="contactWrapper">
+                    <a href="mailto:jakubmichalczyk12345@gmail.com">
+                        <div class="contactBox">
+                            E-mail:
+                            <img src="../img/icons/mail.png" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../../src/js/script.js"></script>
 </body>
+
 </html>

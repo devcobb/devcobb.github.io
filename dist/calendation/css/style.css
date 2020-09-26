@@ -1,0 +1,590 @@
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One|Roboto+Condensed&display=swap");
+@media only screen and (max-width: 900px) {
+  .dayBox {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 10px !important;
+    padding-top: 2% !important;
+    font-size: 15px !important;
+  }
+  .dayBox .calendarPlus {
+    top: 10% !important;
+  }
+  .dayBox .dayBoxInfo {
+    font-size: 8px !important;
+  }
+
+  #topBar h1 {
+    font-size: 15px !important;
+  }
+
+  #addingBox {
+    width: 95% !important;
+    overflow-y: scroll !important;
+  }
+  #addingBox h2 {
+    margin-top: 30%;
+  }
+
+  #overlayerTitle {
+    font-size: 10px !important;
+  }
+
+  #overlayerDate {
+    font-size: 8px !important;
+  }
+
+  .cancelEvent {
+    font-size: 13px !important;
+    padding: 5px !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  #buttonsBox {
+    width: 100% !important;
+  }
+
+  .readyButton, .saveEditedEvent {
+    font-size: 14px !important;
+    padding: 10px 10px !important;
+    margin-top: 0 !important;
+  }
+
+  .readyButton {
+    min-width: 40% !important;
+    margin: 5% 1% !important;
+  }
+}
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#hamburgerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 11;
+  cursor: pointer;
+}
+#hamburgerBox #hamburger {
+  position: absolute;
+  transition: all 0.2s;
+}
+#hamburgerBox #hamburger span {
+  display: block;
+  background: #65913d;
+  height: 5px;
+  width: 40px;
+  margin: 5px;
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+#drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/drag.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 2px dashed #65913d;
+  margin: 5% 0;
+}
+#drop img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+nav {
+  left: -100%;
+  z-index: 10;
+  position: absolute;
+  background: #65913d;
+  width: auto;
+  height: auto;
+  color: #fff;
+  padding: 50px;
+  transition: left 0.5s;
+  border: 2px solid #65913d;
+  border-bottom-right-radius: 100px;
+}
+nav ul {
+  height: auto;
+  margin: 25% 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+nav ul .currentMonth {
+  background: #fff;
+  color: #65913d;
+}
+nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: auto;
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+}
+nav ul li:hover {
+  background: #fff;
+  color: #65913d;
+}
+
+#topBar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #efefef;
+  padding: 20px;
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+}
+#topBar h1 {
+  color: #65913d;
+  font-family: "Fredoka One", cursive;
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border: 2px solid #65913d;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+#container #calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: auto;
+}
+#container #calendar .dayBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid #65913d;
+  width: 150px;
+  height: 150px;
+  margin: 2px;
+  border-radius: 3px;
+  flex-direction: column;
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#container #calendar .dayBox .calendarPlus {
+  position: absolute;
+  top: 35%;
+}
+#container #calendar .dayBox .weekDay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+#container #calendar .dayBox img {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  object-fit: cover;
+}
+#container #calendar .dayBox .dayBoxInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  font-size: 10px;
+  color: #fff;
+  background-color: #65913d;
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+#container #calendar .dayBox #dayBoxDateInfo {
+  margin-top: 20%;
+  font-size: 15px;
+  color: #1d1d1d;
+}
+#container #calendar .dayBox .cancelEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.5%;
+  right: 1.5%;
+  color: #65913d;
+  font-size: 17px;
+  transition: all 0.3s;
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s;
+  background: #fff;
+  border-radius: 50%;
+}
+#container #calendar .dayBox .cancelEvent:hover {
+  background: #65913d;
+  color: #fff;
+}
+#container #calendar .dayBox:hover {
+  background: #efefef;
+  font-size: 30px;
+}
+#container #calendar .dayBox #overlayerInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  bottom: 0;
+  font-size: 20px;
+  padding: 5px;
+}
+#container #calendar .dayBox #overlayerInfo #overlayerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #65913d;
+  border-right: 1px solid #65913d;
+  padding-right: 5px;
+  font-size: 16px;
+}
+#container #calendar .dayBox #overlayerInfo #overlayerDate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  font-size: 12px;
+  flex-direction: column;
+}
+
+#addingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  max-height: 98%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  z-index: 100;
+  padding: 30px;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+#addingBox h2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 35px;
+  width: 90%;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #65913d;
+  text-align: center;
+  margin-top: 10%;
+  border-bottom: 2px solid #65913d;
+}
+#addingBox #url {
+  border-radius: 50px;
+  margin: 20px;
+  border: 2px solid #ccc;
+  outline: none;
+  padding: 10px 15px;
+  width: 70%;
+}
+#addingBox #warning {
+  margin-top: 50px;
+}
+#addingBox #closeAddingURL {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #65913d;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 30px;
+  transition: all 0.2s;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#addingBox #closeAddingURL:hover {
+  border: 1px solid #65913d;
+  border-radius: 50%;
+}
+#addingBox #saveUrl {
+  font-size: 15px;
+  margin-top: 50px;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 50px;
+  border: 2px solid #65913d;
+  background: #65913d;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 180px;
+}
+#addingBox #saveUrl:hover {
+  color: #65913d;
+  background: transparent;
+}
+#addingBox #can {
+  display: block;
+}
+#addingBox #dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1d1d1d;
+}
+#addingBox #imageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: auto;
+}
+#addingBox #imageBox .choosedImg {
+  transition: transform 0.2s;
+  transform: scale(1.5);
+  border: 5px solid #65913d;
+}
+#addingBox #imageBox .placeholderImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 20%;
+  margin: 10% 5%;
+  cursor: pointer;
+  -webkit-box-shadow: 4px 7px 12px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 7px 12px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 12px -2px rgba(0, 0, 0, 0.75);
+}
+#addingBox #imageBox .placeholderImg img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+#addingBox #choosePlaceholderImg {
+  text-align: center;
+  background: #65913d;
+  color: #fff;
+  border: 2px solid #65913d;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#addingBox #choosePlaceholderImg:hover {
+  color: #65913d;
+  background: #fff;
+}
+#addingBox #popUpShowing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  width: 80%;
+  transition: opacity 0.5s;
+}
+#addingBox #popUpShowing #closePopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #65913d;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  font-size: 20px;
+  transition: all 0.2s;
+  padding: 7px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#addingBox #popUpShowing #closePopup:hover {
+  border: 1px solid #65913d;
+  border-radius: 50%;
+}
+#addingBox #popUpShowing h2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #65913d;
+  border-bottom: 2px solid #65913d;
+}
+#addingBox #popUpShowing #time {
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  width: 100px;
+  height: auto;
+  padding: 5px;
+}
+#addingBox #popUpShowing #time:focus {
+  outline: none;
+}
+#addingBox #popUpShowing .slash {
+  padding: 10px;
+  font-size: 30px;
+}
+#addingBox #popUpShowing #hour {
+  width: 70px;
+  height: 10px;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 10px;
+  text-align: center;
+  border: 2px solid #ccc;
+}
+#addingBox #popUpShowing #hour:focus {
+  outline: none;
+}
+#addingBox #popUpShowing #minutes {
+  text-align: center;
+  width: 70px;
+  height: 10px;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 10px;
+  border: 2px solid #ccc;
+}
+#addingBox #popUpShowing #minutes:focus {
+  outline: none;
+}
+#addingBox #popUpShowing #titleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#addingBox #popUpShowing #title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 22px;
+  border: 2px solid #ccc;
+  margin-top: 20px;
+  text-align: center;
+}
+#addingBox #popUpShowing #title:focus {
+  outline: none;
+}
+#addingBox #popUpShowing #buttonsBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+#addingBox #popUpShowing #buttonsBox #drawButton {
+  text-align: center;
+  margin: 70px 20px 0 0;
+}
+#addingBox #popUpShowing #buttonsBox #checkButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 70px;
+}
+#addingBox #popUpShowing #buttonsBox #drawButton, #addingBox #popUpShowing #buttonsBox #checkButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #65913d;
+  color: #fff;
+  border: 2px solid #65913d;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#addingBox #popUpShowing #buttonsBox #drawButton:hover, #addingBox #popUpShowing #buttonsBox #checkButton:hover {
+  color: #65913d;
+  background: #fff;
+}
+#addingBox #popUpShowing #buttonsBox #uploadButton, #addingBox #popUpShowing #buttonsBox #placeholderImgBtn {
+  text-align: center;
+  color: #65913d;
+  padding: 10px 15px;
+  width: 30%;
+  border: 2px solid #65913d;
+  border-radius: 3px;
+  margin: 70px 0 0 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#addingBox #popUpShowing #buttonsBox #uploadButton:hover, #addingBox #popUpShowing #buttonsBox #placeholderImgBtn:hover {
+  background: #65913d;
+  color: #fff;
+}
+
+#overlayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+}
+
+/*# sourceMappingURL=style.css.map */
