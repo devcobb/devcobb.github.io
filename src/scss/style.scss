@@ -431,6 +431,7 @@ h1{
     color:$grey;
     animation: mainHeaderMove .5s;
     animation-fill-mode: forwards;
+    font-weight: normal;
     &::after{
         @include flexCentering(center, center);
         position: absolute;

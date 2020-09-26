@@ -412,6 +412,7 @@ h1 {
   color: #262626;
   animation: mainHeaderMove 0.5s;
   animation-fill-mode: forwards;
+  font-weight: normal;
 }
 h1::after {
   display: flex;
