@@ -145,6 +145,7 @@ function showPage(page){
         );
     }
     else if(page === "#projects"){
+        document.querySelectorAll(".projectBox").forEach(box => createLoadingBox(box))
         setTimeout(
             () => {
                 document.querySelector("#projectBox").style.transform = "none";
@@ -156,6 +157,71 @@ function showPage(page){
     }
 
     document.querySelector(page).style.height = "100%";
+}
+
+function createLoadingBox(box){
+    let img = new Image();
+    let avaiableProjects = [
+        {
+            id: 0,
+            img: "deliciae.JPG"
+        },
+        {
+            id: 1,
+            img: "calendation.JPG"
+        },
+        {
+            id: 2,
+            img: "filmer.JPG"
+        },
+        {
+            id: 3,
+            img: "financer.JPG"
+        },
+        {
+            id: 4,
+            img: "tubedit.JPG"
+        },
+        {
+            id: 5,
+            img: "crime.JPG"
+        },
+        {
+            id: 6,
+            img: "cardmemory.JPG"
+        },
+        {
+            id: 7,
+            img: "quiz.JPG"
+        },
+        {
+            id: 8,
+            img: "tanky.JPG"
+        },
+        {
+            id: 9,
+            img: "evolution.JPG"
+        },
+        {
+            id: 10,
+            img: "portoflio.jpg"
+        },
+        {
+            id: 11,
+            img: "constructionImg.png"
+        },
+    ];
+    let loadingBox = document.createElement("div");
+    loadingBox.id = "loadingBox"
+
+    loadingBox.innerHTML = `<div id="loading"></div>`;
+    box.appendChild(loadingBox);
+    img.onload = () => {
+        box.children[1].remove();
+    }
+
+    img.src = `../img/${avaiableProjects.filter(proj => proj.id === parseInt(box.dataset.id))[0].img}`;
+    box.appendChild(img)
 }
 
 function updatePageStatus(idx){
