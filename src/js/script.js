@@ -204,7 +204,7 @@ function createLoadingBox(box){
         },
         {
             id: 10,
-            img: "portoflio.jpg"
+            img: "portoflio.JPG"
         },
         {
             id: 11,
