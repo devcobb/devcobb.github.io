@@ -145,7 +145,12 @@ function showPage(page){
         );
     }
     else if(page === "#projects"){
-        document.querySelectorAll(".projectBox").forEach(box => createLoadingBox(box))
+        document.querySelectorAll(".projectBox").forEach(box => {
+            if(box.children[1] === undefined){
+                createLoadingBox(box)
+            }
+        });
+
         setTimeout(
             () => {
                 document.querySelector("#projectBox").style.transform = "none";
