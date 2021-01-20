@@ -26,15 +26,15 @@
         <div class="mobileMenuElem" id="lastElem"></div>
     </nav>
     <div id="mobileMenu">
-        <div class="mobileMenuElem active" data-id="0">Strona Główna</div>
-        <div class="mobileMenuElem" data-id="1">O mnie</div>
-        <div class="mobileMenuElem" data-id="2">Projekty</div>
+        <div class="mobileMenuElem active" data-id="0">Home</div>
+        <div class="mobileMenuElem" data-id="1">About</div>
+        <div class="mobileMenuElem" data-id="2">Projects</div>
     </div>
     <nav id="menu">
         <ul>
-            <li data-id="0">Strona Główna</li>
-            <li data-id="1">O mnie</li>
-            <li data-id="2">Projekty</li>
+            <li data-id="0">Home</li>
+            <li data-id="1">About</li>
+            <li data-id="2">Projects</li>
         </ul>
     </nav>
     <div id="bg" class="container">
@@ -42,6 +42,13 @@
             <div class="headerDot delay"></div>
             Jakub Michalczyk
         </h1>
+        <h2>
+            Aspiring Front end developer, web developer
+        </h2>
+        <div id="mouseScroll">
+            <div id="scroll"></div>
+            <img src="../img/mouse.png">
+        </div>
         <div id="fog1" class="fog"></div>
         <div id="fog2" class="fog"></div>
     </div>
@@ -49,216 +56,78 @@
         <canvas></canvas>
         <div class="row">
             <div id="desc">
-                <h2 class="sectionHeader">Cześć,</h2>
+                <h2 class="sectionHeader">Hi,</h2>
                 <p class="paragraph">
-                    Jestem Kuba. Ukończyłem technikum na profilu informatyki, dzięki czemu mam <span>wiedze z zakresu
-                        sprzętu komputerowego, peryferii</span>, ale także <span>sieci komputerowej</span> czy
-                    <span>administracji baz danych.</span>
-                    Pośród szerokiego wachlarzu tematów na zajęciach, to tworzenie stron internetowych było dla mnie
-                    najbardziej interesujące. W szkole poznałem same podstawy, dalej <span>uczyłem się na własną
-                        rękę</span>.
-                    Zajmuję się tym od <span>trzech lat</span> w zaciszu domowym. Stopniowo poznając nowe technologie i
-                    zwiększając swoje umiejętności, tworzyłem nowe projekty, wykorzystywałem do nich takie technologie
-                    jak
+                    I'm Jakub. I graduated from the technical school in the IT specialist profile 💻. The school provided me with an understanding of a 
+                    wide range of fields offered by computer science. Creating websites was the most interesting one, so I started to expand my knowledge on my own at home. 
+                    While studying, I created all kinds of projects in which I used technologies such as:
                 </p>
                 <ul>
                     <li>HTML,</li>
-                    <li>CSS wraz z preprocesorem SCSS,</li>
+                    <li>CSS and SCSS,</li>
                     <li>JavaScript,</li>
                     <li>React</li>
                 </ul>
                 <p class="paragraph">
-                    Z kolei narzędzia, które towarzyszyły mi przy ich tworzeniu to <span>GIT</span> czy
-                    <span>npm</span>.
-                    Gotów jestem do <span>dalszej nauki i rozwoju.</span>
+                    Other tools that I used to develop are GIT and npm. I am ready for further learning and development.
                 </p>
             </div>
         </div>
     </section>
     <section id="projects" class="container">
         <div id="projectBox">
-            <div class="projectRow">
-                <a href="../deliciae/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="0">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="../calendation/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="1">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/devcobb/Filmer" target="_blank">
-                    <div class="projectBox" data-id="2">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">react</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div id="wrapper">
+                <div class="scrollbar" id="style-2">
+                  <div class="force-overflow"></div>
+                </div>
             </div>
-            <div class="projectRow">
-                <a href="https://github.com/devcobb/Financer" target="_blank">
-                    <div class="projectBox" data-id="3">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">react</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="../tubedit/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="4">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                                <div class="projectTag">youtube api</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="../crime/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="5">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">localstorage</div>
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                                <div class="projectTag">randomuser api</div>
-                                <div class="projectTag">restcountries api</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+          <div id="timeline"></div>
+          <div id="projectsWrap">
+            <div class="project">
+                <div class="dateTag">Currently working on it</div>
+                <img src="../img/evolution_2.png" />
             </div>
-            <div class="projectRow">
-                <a href="../cardmemory/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="6">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="../quiz/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="7">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                                <div class="projectTag">quiz api</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="../tanky/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="8">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                                <div class="projectTag">gamepad api</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="project">
+                <div class="dateTag">06-2020</div>
+                <img src="../img/portoflio.JPG" />
             </div>
-            <div class="projectRow">
-                <a href="../evolution/html/index.html" target="_blank">
-                    <div class="projectBox" data-id="9">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                                <div class="projectTag">canvas</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://devcobb.github.io/">
-                    <div class="projectBox" data-id="10">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/logo.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">html5</div>
-                                <div class="projectTag">css3</div>
-                                <div class="projectTag">javascript</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="projectBox" data-id="11">
-                        <div class="projectOverlayer">
-                            <div class="imgBox">
-                                <img src="../img/construction.png">
-                            </div>
-                            <div class="tagBox">
-                                <div class="projectTag">Strona W budowie</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="project">
+                <div class="dateTag">05-2020</div>
+                <img src="../img/financer.JPG" />
             </div>
+            <div class="project">
+                <div class="dateTag">03-2020</div>
+                <img src="../img/deliciae.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">01-2020</div>
+                <img src="../img/tanky.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">11-2019</div>
+                <img src="../img/filmer.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">08-2019</div>
+                <img src="../img/evolution.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">05-2019</div>
+                <img src="../img/crime.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">04-2019</div>
+                <img src="../img/tubedit.JPG" />
+            </div>
+            <div class="project">
+                <div class="dateTag">02-2019</div>
+                <img src="../img/cardmemory.JPG" />
+            </div>
+              <div class="project">
+                <div class="dateTag">10-2018</div>
+                  <img src="../img/quiz.JPG" />
+              </div>
+          </div>
         </div>
         <div id="skillsBox">
             <div class="skillBox">
@@ -281,7 +150,7 @@
             </div>
         </div>
         <div id="rightBar">
-            <h2 class="sectionHeader">Kontakt.</h2>
+            <h2 class="sectionHeader">Contact.</h2>
             <div id="contactInfo">
                 <div class="contactWrapper">
                     <a href="https://github.com/devcobb">
@@ -302,7 +171,7 @@
             </div>
         </div>
     </section>
-    <script src="../js/main.js"></script>
+    <script src="../../src/js/script.js"></script>
 </body>
 
 </html>

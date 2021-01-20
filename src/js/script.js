@@ -16,6 +16,7 @@ let circles = [];
 let numOfCircl = 0;
 let circlesAnimNum = 100;
 let anim = null;
+let lastScrollPosition = 0;
 
 (function init() {
     loadingScreen();
@@ -145,88 +146,51 @@ function showPage(page){
         );
     }
     else if(page === "#projects"){
-        document.querySelectorAll(".projectBox").forEach(box => {
-            if(box.children[1] === undefined){
-                createLoadingBox(box)
-            }
-        });
-
-        setTimeout(
-            () => {
-                document.querySelector("#projectBox").style.transform = "none";
-                document.querySelectorAll(".projectRow").forEach(project => project.style.margin = "1%");
-                document.querySelectorAll(".projectRow a").forEach(project => project.style.margin = "1%");
-            },
-            500
-        );
+        if(window.screen.width > 1024){
+            setTimeout( () => {
+                document.querySelector("#projectsWrap").style.top = "-230%";
+                document.querySelector(".scrollbar").scrollTop = document.querySelector(".scrollbar").scrollHeight;
+                setTimeout( () => {
+                    setProjectsScrollBar();
+                }, 1000);
+            }, 500);
+        }
+        else{
+            setProjectsScrollBar();
+        }
     }
 
     document.querySelector(page).style.height = "100%";
 }
 
-function createLoadingBox(box){
-    let img = new Image();
-    let avaiableProjects = [
-        {
-            id: 0,
-            img: "deliciae.JPG"
-        },
-        {
-            id: 1,
-            img: "calendation.JPG"
-        },
-        {
-            id: 2,
-            img: "filmer.JPG"
-        },
-        {
-            id: 3,
-            img: "financer.JPG"
-        },
-        {
-            id: 4,
-            img: "tubedit.JPG"
-        },
-        {
-            id: 5,
-            img: "crime.JPG"
-        },
-        {
-            id: 6,
-            img: "cardmemory.JPG"
-        },
-        {
-            id: 7,
-            img: "quiz.JPG"
-        },
-        {
-            id: 8,
-            img: "tanky.JPG"
-        },
-        {
-            id: 9,
-            img: "evolution.JPG"
-        },
-        {
-            id: 10,
-            img: "portoflio.JPG"
-        },
-        {
-            id: 11,
-            img: "constructionImg.png"
-        },
-    ];
-    let loadingBox = document.createElement("div");
-    loadingBox.id = "loadingBox"
+function setProjectsScrollBar(){
+    document.querySelector(".scrollbar").addEventListener("scroll", e => {
+        if (lastScrollPosition <  document.querySelector(".scrollbar").scrollTop){
+            document.querySelector("#projectsWrap").style.top = calculateScrollPecentage();
+        } else {
+            document.querySelector("#projectsWrap").style.top = calculateScrollPecentage();
+        }
+        
+        lastScrollPosition = document.querySelector(".scrollbar").scrollTop;
+    }, false);
+}
 
-    loadingBox.innerHTML = `<div id="loading"></div>`;
-    box.appendChild(loadingBox);
-    img.onload = () => {
-        box.children[1].remove();
+function calculateScrollPecentage(){
+    let maxPossibleScroll = 750;
+    let scrollPercent;
+    
+    if(window.screen.width > 1024){
+        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 2.3;
+    }
+    else if(window.screen.height > 1000){
+        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll);
+    }
+    else{
+        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.5;
     }
 
-    img.src = `../img/${avaiableProjects.filter(proj => proj.id === parseInt(box.dataset.id))[0].img}`;
-    box.appendChild(img)
+    return `-${scrollPercent}%`;
+
 }
 
 function updatePageStatus(idx){

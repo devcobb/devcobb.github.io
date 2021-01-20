@@ -12,18 +12,10 @@ h1, h2, h3, h4, h5, h6 {
   #dotsMenu {
     left: 97% !important;
   }
-
-  #rightBar .sectionHeader {
-    font-size: 37px !important;
-  }
 }
 @media only screen and (max-width: 1200px) {
   .row {
     width: 30% !important;
-  }
-
-  h1 {
-    font-size: 31px !important;
   }
 
   #desc {
@@ -34,14 +26,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 31px !important;
   }
   #desc p, #desc li {
-    font-size: 14px !important;
+    font-size: 17px !important;
   }
 
   #rightBar {
     padding-top: 20% !important;
-  }
-  #rightBar .sectionHeader {
-    font-size: 31px !important;
   }
   #rightBar h2 {
     font-size: 31px !important;
@@ -51,19 +40,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .projectOverlayer .imgBox {
-    height: 100% !important;
-  }
-  .projectOverlayer .imgBox img {
-    width: 35px !important;
-  }
-
   #desc p, #desc li {
     font-size: 17px !important;
   }
 
-  .projectTag {
-    display: none !important;
+  #wrapper {
+    top: 5% !important;
+    left: 65% !important;
+  }
+
+  #projects {
+    flex-direction: column;
+  }
+
+  .project {
+    position: static !important;
+    width: auto !important;
+  }
+  .project img {
+    width: 200px !important;
   }
 
   #dotsMenu {
@@ -79,17 +74,18 @@ h1, h2, h3, h4, h5, h6 {
     width: 30px !important;
   }
 
-  #projects {
-    flex-direction: column !important;
-    background-image: none !important;
-  }
-
   #contactInfo {
     flex-direction: row !important;
     margin-top: 0 !important;
   }
 
+  .dateTag {
+    display: none !important;
+  }
+
   #rightBar {
+    position: relative;
+    z-index: 10000000000000002000 !important;
     width: 100% !important;
     height: 20% !important;
     padding-top: 0 !important;
@@ -102,23 +98,22 @@ h1, h2, h3, h4, h5, h6 {
   #rightBar .sectionHeader {
     margin: 2% 0 0 0 !important;
     min-width: 35% !important;
-    font-size: 21px !important;
   }
 
   h1 {
-    font-size: 18px !important;
+    font-size: 3.5em !important;
+  }
+
+  #bg h2 {
+    font-size: 2.5em !important;
   }
 
   #menu ul li {
     margin: 0 10px !important;
   }
 
-  #projectBox {
-    width: 100% !important;
-    padding: 0 !important;
-  }
-
   #skillsBox {
+    z-index: 10000000000000002000 !important;
     justify-content: space-around !important;
     flex-direction: row !important;
     width: 100% !important;
@@ -127,22 +122,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (max-width: 900px) and (min-width: 768px) {
   h1 {
-    font-size: 22px !important;
+    font-size: 3.5em !important;
     min-width: 40% !important;
     padding: 3% 5% !important;
   }
 
+  #bg h2 {
+    font-size: 2em !important;
+  }
+
   #desc p, #desc li {
-    font-size: 13px !important;
+    font-size: 16px !important;
   }
 }
 @media only screen and (max-width: 768px) {
   #desc p, #desc li {
-    font-size: 12px !important;
+    font-size: 15px !important;
   }
 }
 @media only screen and (max-width: 600px) {
-  .projectOverlayer .imgBox {
+  #mouseScroll {
     display: none !important;
   }
 
@@ -165,13 +164,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   h1 {
-    width: 50% !important;
+    width: 100% !important;
     height: 6% !important;
-    font-size: 16px !important;
+    font-size: 3em !important;
   }
-  h1::before {
-    width: 15px !important;
-    height: 15px !important;
+  h1::after {
+    top: 85% !important;
+  }
+
+  #bg h2 {
+    font-size: 2em !important;
+    margin: 4% 0 !important;
   }
 
   #menu {
@@ -188,16 +191,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (max-width: 540px) {
   #desc p, #desc li {
-    font-size: 12px !important;
+    font-size: 14px !important;
+  }
+
+  .headerDot {
+    display: none !important;
   }
 }
 @media only screen and (max-width: 414px) {
   h1 {
-    font-size: 12px !important;
+    width: 100% !important;
+    font-size: 2.5em !important;
+  }
+
+  #bg h2 {
+    font-size: 1.5em !important;
   }
 
   #desc p, #desc li {
-    font-size: 11px !important;
+    font-size: 13px !important;
   }
 
   .skillBox img {
@@ -211,12 +223,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (max-width: 360px) {
   #desc p, #desc li {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
 }
 @media only screen and (max-width: 320px) {
+  #bg h1 {
+    width: 100% !important;
+    font-size: 2em !important;
+  }
+
   #desc p, #desc li {
-    font-size: 9px !important;
+    font-size: 11px !important;
   }
 }
 @font-face {
@@ -273,7 +290,7 @@ body, html {
   background-image: url("../img/bg1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 0%;
+  background-position: center 50%;
 }
 #bg #fog1 {
   left: 100%;
@@ -292,7 +309,47 @@ body, html {
   background-position: left center;
   animation: fogAnim 240s linear infinite;
 }
+#bg h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 3em;
+  margin: 1% 0;
+  text-align: center;
+}
+#bg #mouseScroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 3%;
+}
+#bg #mouseScroll #scroll {
+  position: absolute;
+  top: 15%;
+  width: 10px;
+  height: 15px;
+  border-radius: 50px;
+  background: #1d1d1d;
+  animation: mouseScrolling 0.6s;
+  animation-iteration-count: infinite;
+  transition: all 0.3s;
+}
 
+@keyframes mouseScrolling {
+  0% {
+    top: 15%;
+  }
+  75% {
+    top: 10%;
+  }
+  100% {
+    top: 15%;
+  }
+}
 @keyframes fogAnim {
   0% {
     transform: translate(0, 0);
@@ -449,30 +506,30 @@ h1 {
   align-items: center;
   position: relative;
   font-family: "Kufam";
-  background: #ffffff;
   min-width: 30%;
   width: auto;
   font-size: 40px;
   text-align: center;
-  padding: 2% 4%;
-  transform: translate(-10%, -70%) skewY(1deg) rotate(3deg);
+  padding: 0.5% 4%;
   color: #262626;
-  animation: mainHeaderMove 0.5s;
-  animation-fill-mode: forwards;
   font-weight: normal;
+  font-size: 4em;
+  margin: 0;
+  z-index: 1;
 }
 h1::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  content: "@devcobb";
   position: absolute;
-  top: 75%;
-  left: 30%;
-  background: #262626;
-  width: 100%;
-  height: 100%;
-  content: "Junior Front-End Developer";
-  color: #ffffff;
+  width: auto;
+  top: 70%;
+  left: 70%;
+  padding: 0.25em 0.5em;
+  background: #ffffff;
+  font-size: 0.35em;
+  z-index: -1;
 }
 
 .delay {
@@ -486,8 +543,8 @@ h1::after {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  top: -10%;
-  left: 85%;
+  top: -5%;
+  left: 90%;
 }
 
 .jump {
@@ -502,22 +559,22 @@ h1::after {
   }
   15% {
     top: -50%;
-    height: 40px;
+    height: 30px;
   }
   30% {
     top: 5%;
     height: 25px;
-    width: 35px;
+    width: 30px;
   }
   45% {
     top: -35%;
-    height: 30px;
+    height: 27.5px;
     width: 25px;
   }
   60% {
     top: 0%;
     height: 25px;
-    width: 30px;
+    width: 27.5px;
   }
   75% {
     top: -20%;
@@ -525,22 +582,14 @@ h1::after {
     width: 25px;
   }
   90% {
-    top: -5%;
+    top: -8%;
     height: 25px;
     width: 28px;
   }
   100% {
-    top: -10%;
+    top: -5%;
     height: 25px;
     width: 25px;
-  }
-}
-@keyframes mainHeaderMove {
-  0% {
-    transform: translate(-10%, -70%) skewY(0deg) rotate(0deg);
-  }
-  100% {
-    transform: translate(-10%, -70%) skewY(1deg) rotate(3deg);
   }
 }
 #about {
@@ -603,7 +652,7 @@ h1::after {
   padding: 0;
   text-align: left;
   width: 75%;
-  font-size: 14px;
+  font-size: 18px;
 }
 #about #desc p span {
   color: #a6a6a6;
@@ -640,6 +689,68 @@ h1::after {
   background-position: 0% 100%;
   height: 0%;
 }
+#projects #projectBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#projects #projectsWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  transition-timing-function: ease-in-out;
+  transition: top 1s;
+  margin-left: -5%;
+}
+#projects .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 1.05%;
+  margin: 5% 0 0 0%;
+  width: auto;
+  width: 30%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#projects .project img {
+  display: block;
+  width: 350px;
+  z-index: 1;
+}
+#projects .project .dateTag {
+  position: absolute;
+  left: 5%;
+  z-index: 2;
+  letter-spacing: 3px;
+  width: auto;
+  text-align: center;
+  font-family: Roboto;
+  padding: 0.25em 0.5em;
+  background: #ffffff;
+  color: #1d1d1d;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
+  box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
+}
+#projects #timeline {
+  width: 10px;
+  height: 1000px;
+  background: #1d1d1d;
+  position: fixed;
+  margin-left: -10%;
+}
 #projects #skillsBox {
   display: flex;
   justify-content: center;
@@ -648,6 +759,11 @@ h1::after {
   background: #1d1d1d;
   width: 5%;
   height: 100%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 #projects #skillsBox .skillBox {
   position: relative;
@@ -656,115 +772,6 @@ h1::after {
 #projects #skillsBox .skillBox img {
   z-index: 10;
   width: 40px;
-}
-#projects #projectBox {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  transform-style: preserve-3d;
-  transform: rotateY(-15deg);
-  width: 80%;
-  height: 100%;
-  padding: 5% 0;
-  transition: all 0.5s;
-}
-#projects #projectBox #loadingBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-}
-#projects #projectBox #loadingBox #loading {
-  width: 15px;
-  height: 15px;
-  padding: 1%;
-  border-radius: 50%;
-  border: 2px dashed #262626;
-  animation: projectLoading 1s;
-  animation-iteration-count: infinite;
-}
-#projects #projectBox .projectRow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 20%;
-  transition: all 0.3s;
-}
-#projects #projectBox .projectRow a {
-  width: 25%;
-  display: block;
-  transition: all 0.3s;
-}
-#projects #projectBox .projectBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#projects #projectBox .projectBox img {
-  object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
-  height: 100%;
-  width: 100%;
-}
-#projects #projectBox .projectOverlayer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  z-index: 9999999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(38, 38, 38, 0);
-  opacity: 0;
-  transition: all 0.1s;
-  cursor: pointer;
-}
-#projects #projectBox .projectOverlayer .imgBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70%;
-}
-#projects #projectBox .projectOverlayer .tagBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 30%;
-}
-#projects #projectBox .projectOverlayer .projectTag {
-  font-family: Roboto, sans-serif;
-  text-align: center;
-  font-weight: bold;
-  background: #ffffff;
-  border-radius: 15px;
-  font-size: 11px;
-  color: #262626;
-  margin: 0 1%;
-  padding: 3px 5px;
-}
-#projects #projectBox .projectOverlayer:hover {
-  opacity: 1;
-  background-color: rgba(38, 38, 38, 0.9);
-}
-#projects #projectBox .projectOverlayer img {
-  width: 60px;
-  cursor: pointer;
-  height: 60px;
-  object-fit: contain;
 }
 #projects #rightBar {
   display: flex;
@@ -777,9 +784,14 @@ h1::after {
   height: 100%;
   padding-top: 7%;
   z-index: -2;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 #projects #rightBar h2 {
-  font-size: 41px;
+  font-size: 2.5em;
 }
 #projects #rightBar #contactInfo {
   display: flex;
@@ -869,6 +881,42 @@ h1::after {
   100% {
     transform: rotate(360deg);
   }
+}
+#wrapper {
+  position: absolute;
+  z-index: 100000000000000020;
+  top: 15%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 10%;
+  margin: auto;
+}
+#wrapper .scrollbar {
+  position: absolute;
+  margin-left: 30px;
+  float: left;
+  height: 500px;
+  width: 65px;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+#wrapper .scrollbar .force-overflow {
+  min-height: 1250px;
+}
+#wrapper #style-2::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+#wrapper #style-2::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+#wrapper #style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #1d1d1d;
 }
 
 /*# sourceMappingURL=style.css.map */
