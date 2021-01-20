@@ -148,7 +148,7 @@ function showPage(page){
     else if(page === "#projects"){
         if(window.screen.width > 1024){
             setTimeout( () => {
-                document.querySelector("#projectsWrap").style.top = "-230%";
+                document.querySelector("#projectsWrap").style.top = "-150%";
                 document.querySelector(".scrollbar").scrollTop = document.querySelector(".scrollbar").scrollHeight;
                 setTimeout( () => {
                     setProjectsScrollBar();
@@ -180,13 +180,13 @@ function calculateScrollPecentage(){
     let scrollPercent;
     
     if(window.screen.width > 1024){
-        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 2.3;
+        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.5;
     }
     else if(window.screen.height > 1000){
         scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll);
     }
     else{
-        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.5;
+        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.3;
     }
 
     return `-${scrollPercent}%`;

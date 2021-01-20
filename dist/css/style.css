@@ -120,6 +120,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 10% !important;
   }
 }
+@media only screen and (max-width: 1024px) and (max-height: 1366px) {
+  .project img {
+    width: 300px !important;
+  }
+}
 @media only screen and (max-width: 900px) and (min-width: 768px) {
   h1 {
     font-size: 3.5em !important;
@@ -689,6 +694,12 @@ h1::after {
   background-position: 0% 100%;
   height: 0%;
 }
+#projects a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
 #projects #projectBox {
   display: flex;
   justify-content: center;
@@ -714,10 +725,10 @@ h1::after {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 1.05%;
+  left: 0%;
   margin: 5% 0 0 0%;
   width: auto;
-  width: 30%;
+  width: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
