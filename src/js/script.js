@@ -146,6 +146,7 @@ function showPage(page){
         );
     }
     else if(page === "#projects"){
+        document.querySelector("#timeline").style.height = "100%";
         if(window.screen.width > 1024){
             setTimeout( () => {
                 document.querySelector("#projectsWrap").style.top = "-150%";
@@ -181,12 +182,6 @@ function calculateScrollPecentage(){
     
     if(window.screen.width > 1024){
         scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.5;
-    }
-    else if(window.screen.height > 1000){
-        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll);
-    }
-    else{
-        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.3;
     }
 
     return `-${scrollPercent}%`;

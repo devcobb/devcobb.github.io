@@ -53,7 +53,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@media only screen and (max-width: 1024px) and (max-height: 1366px){
+    //Fix for IPods
+    .project{
+        img{
+            width: 300px !important;
+        }
+    } 
+}
+
 @media only screen and (max-width: 1024px){
+    #timeline{
+        display: none !important;
+    }
+    #wrapper{
+        display: none !important;
+    }
     #desc{
         p, li{
             font-size: 17px !important;
@@ -64,13 +79,30 @@ h1, h2, h3, h4, h5, h6 {
         left: 65% !important;
     }
     #projects{
+        background-image: none !important;
         flex-direction: column;
+    }
+    #projectBox{
+        a{
+            margin: 5px;
+            width: 30% !important;
+            &::after{
+                display: none !important;
+            }
+        }
+    }
+    #projectsWrap{
+        position: static !important;
+        width: 100% !important;
+        height: 90% !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
     }
     .project{
         position: static !important;
         width: auto !important;
         img{
-            width: 200px !important;
+            width: 100% !important;
         }
     } 
     #dotsMenu{
@@ -88,9 +120,6 @@ h1, h2, h3, h4, h5, h6 {
     #contactInfo{
         flex-direction: row !important;
         margin-top:0 !important;
-    }
-    .dateTag{
-        display: none !important;
     }
     #rightBar{
         position: relative;
@@ -128,15 +157,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 100% !important;
         height:10% !important;
     }
-}
-
-@media only screen and (max-width: 1024px) and (max-height: 1366px){
-    //Fix for IPods
-    .project{
-        img{
-            width: 300px !important;
-        }
-    } 
 }
 
 @media only screen and (max-width: 900px) and (min-width: 768px){
@@ -698,7 +718,22 @@ h1{
     height:0%;
     a{
         @include flexCentering(center, center);
-        width: 30%;
+        position: relative;
+        &::after{
+            position: absolute;
+            top:15%;
+            left:-5%;
+            background: $white;
+            border-radius: 15px;
+            padding: .25em .5em;
+            font-family: Roboto;
+            text-align: center;
+            letter-spacing: 3px;
+            color:$darkgrey;
+            -webkit-box-shadow: 1px 5px 16px -3px rgba(0,0,0,0.51); 
+            box-shadow: 1px 5px 16px -3px rgba(0,0,0,0.51);
+            z-index:2;
+        }
     }
     #projectBox{
         @include flexCentering(center, center);
@@ -711,15 +746,12 @@ h1{
         position: absolute;
         left: 0%;
         top:0%;
-        width:100%;
+        width:83.35%;
         transition-timing-function: ease-in-out;
         transition: top 1s;
-        margin-left:-5%;
     }
     .project{
         @include flexCentering(center, center);
-        position: relative;
-        left:0%;
         margin:5% 0 0 0%;
         width: auto;
         width:100%;
@@ -733,28 +765,11 @@ h1{
             width: 350px;
             z-index:1;
         }
-        .dateTag{
-            position: absolute;
-            left:5%;
-            z-index:2;
-            letter-spacing: 3px;
-            width:auto;
-            text-align: center;
-            font-family: Roboto;
-            padding: .25em .5em;
-            background: $white;
-            color: #1d1d1d;
-            border-radius: 15px;
-            -webkit-box-shadow: 1px 5px 16px -3px rgba(0,0,0,0.51); 
-            box-shadow: 1px 5px 16px -3px rgba(0,0,0,0.51);
-        }
     }
     #timeline{
         width:10px;
-        height:1000px;
         background: $darkgrey;
         position: fixed;
-        margin-left:-10%;
     }
     #skillsBox{
         @include flexCentering(center, center);
@@ -895,23 +910,81 @@ h1{
         margin-bottom: 25px;
         scroll-behavior: smooth;
         cursor: pointer;
-    .force-overflow{
-        min-height: 1250px;
+        .force-overflow{
+            min-height: 1250px;
+        }
+    }
+
+    #style-2::-webkit-scrollbar-track{
+        border-radius: 10px;
+    }
+    
+    #style-2::-webkit-scrollbar{
+        width: 12px;
+        background-color: #ccc;
+        border-radius: 10px;
+    }
+    
+    #style-2::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #1d1d1d;
     }
 }
 
-#style-2::-webkit-scrollbar-track{
-    border-radius: 10px;
-}
-    
-#style-2::-webkit-scrollbar{
-    width: 12px;
-    background-color: #ccc;
-    border-radius: 10px;
-}
-    
-#style-2::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background-color: #1d1d1d;
-}
+#projects{
+    #quiz{
+        &::after{
+            content: "10-2018"
+        }
+    }
+    #cardmemory{
+        &::after{
+            content: "02-2019"
+        }
+    }
+    #tubedit{
+        &::after{
+            content: "04-2019"
+        }
+    }
+    #crime{
+        &::after{
+            content: "05-2019"
+        }
+    }
+    #evolution{
+        &::after{
+            content: "08-2019"
+        }
+    }
+    #filmer{
+        &::after{
+            content: "11-2019"
+        }
+    }
+    #tanky{
+        &::after{
+            content: "01-2020"
+        }
+    }
+    #deliciae{
+        &::after{
+            content: "03-2020"
+        }
+    }
+    #financer{
+        &::after{
+            content: "05-2020"
+        }
+    }
+    #portfolio{
+        &::after{
+            content: "06-2020"
+        }
+    }
+    #evolution_2{
+        &::after{
+            content: "Currently working on it"
+        }
+    }
 }

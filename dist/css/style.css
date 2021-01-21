@@ -39,7 +39,20 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 }
+@media only screen and (max-width: 1024px) and (max-height: 1366px) {
+  .project img {
+    width: 300px !important;
+  }
+}
 @media only screen and (max-width: 1024px) {
+  #timeline {
+    display: none !important;
+  }
+
+  #wrapper {
+    display: none !important;
+  }
+
   #desc p, #desc li {
     font-size: 17px !important;
   }
@@ -50,7 +63,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #projects {
+    background-image: none !important;
     flex-direction: column;
+  }
+
+  #projectBox a {
+    margin: 5px;
+    width: 30% !important;
+  }
+  #projectBox a::after {
+    display: none !important;
+  }
+
+  #projectsWrap {
+    position: static !important;
+    width: 100% !important;
+    height: 90% !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
   }
 
   .project {
@@ -58,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto !important;
   }
   .project img {
-    width: 200px !important;
+    width: 100% !important;
   }
 
   #dotsMenu {
@@ -77,10 +107,6 @@ h1, h2, h3, h4, h5, h6 {
   #contactInfo {
     flex-direction: row !important;
     margin-top: 0 !important;
-  }
-
-  .dateTag {
-    display: none !important;
   }
 
   #rightBar {
@@ -118,11 +144,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row !important;
     width: 100% !important;
     height: 10% !important;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 1366px) {
-  .project img {
-    width: 300px !important;
   }
 }
 @media only screen and (max-width: 900px) and (min-width: 768px) {
@@ -698,7 +719,22 @@ h1::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  position: relative;
+}
+#projects a::after {
+  position: absolute;
+  top: 15%;
+  left: -5%;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 0.25em 0.5em;
+  font-family: Roboto;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #1d1d1d;
+  -webkit-box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
+  box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
+  z-index: 2;
 }
 #projects #projectBox {
   display: flex;
@@ -715,17 +751,14 @@ h1::after {
   position: absolute;
   left: 0%;
   top: 0%;
-  width: 100%;
+  width: 83.35%;
   transition-timing-function: ease-in-out;
   transition: top 1s;
-  margin-left: -5%;
 }
 #projects .project {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: 0%;
   margin: 5% 0 0 0%;
   width: auto;
   width: 100%;
@@ -740,27 +773,10 @@ h1::after {
   width: 350px;
   z-index: 1;
 }
-#projects .project .dateTag {
-  position: absolute;
-  left: 5%;
-  z-index: 2;
-  letter-spacing: 3px;
-  width: auto;
-  text-align: center;
-  font-family: Roboto;
-  padding: 0.25em 0.5em;
-  background: #ffffff;
-  color: #1d1d1d;
-  border-radius: 15px;
-  -webkit-box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
-  box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
-}
 #projects #timeline {
   width: 10px;
-  height: 1000px;
   background: #1d1d1d;
   position: fixed;
-  margin-left: -10%;
 }
 #projects #skillsBox {
   display: flex;
@@ -928,6 +944,40 @@ h1::after {
 #wrapper #style-2::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #1d1d1d;
+}
+
+#projects #quiz::after {
+  content: "10-2018";
+}
+#projects #cardmemory::after {
+  content: "02-2019";
+}
+#projects #tubedit::after {
+  content: "04-2019";
+}
+#projects #crime::after {
+  content: "05-2019";
+}
+#projects #evolution::after {
+  content: "08-2019";
+}
+#projects #filmer::after {
+  content: "11-2019";
+}
+#projects #tanky::after {
+  content: "01-2020";
+}
+#projects #deliciae::after {
+  content: "03-2020";
+}
+#projects #financer::after {
+  content: "05-2020";
+}
+#projects #portfolio::after {
+  content: "06-2020";
+}
+#projects #evolution_2::after {
+  content: "Currently working on it";
 }
 
 /*# sourceMappingURL=style.css.map */
