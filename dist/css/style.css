@@ -266,6 +266,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Kufam";
   src: url("../fonts/Kufam.ttf");
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
 #loadingScreen {
   display: flex;
   justify-content: center;
