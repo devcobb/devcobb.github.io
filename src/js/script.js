@@ -35,7 +35,7 @@ function loadingScreen(){
     let screen = document.createElement("div");
 
     screen.id = "loadingScreen";
-    screen.innerHTML = `<img src="../img/logo.png" />`;
+    screen.innerHTML = `<img src="dist/img/logo.png" />`;
     document.body.appendChild(screen)
 }
 
