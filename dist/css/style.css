@@ -629,10 +629,10 @@ h1::after {
   width: 100%;
   height: 0%;
   background-color: #efefef;
-  background-image: url("../img/abstractBg.png");
-  background-size: cover;
+  background-size: contain;
+  background-image: url("../img/wave2.png");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 0 100%;
 }
 #about h2 {
   font-size: 61px;
@@ -808,9 +808,13 @@ h1::after {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-image: url("../img/bg2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
   position: relative;
   flex-direction: column;
-  background: #262626;
+  background-color: #262626;
   width: 15%;
   height: 100%;
   padding-top: 7%;
