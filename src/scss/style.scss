@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
         left:0 !important;
         width:100% !important;
         border-left: none !important;
-        height: auto !important;
+        height: 65% !important;
         background-image: none !important;
         h2{
             margin-top:0 !important;
@@ -345,8 +345,8 @@ body, html{
 }
 
 #waveBoxMobile{
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 64.5%;
     transition: all .3s;
     opacity: 0;
     img{
@@ -790,7 +790,7 @@ h1{
         }
     }
     #loadMoreProjects{
-        position: fixed;
+        position: absolute;
         top: 55%;
         font-family: Roboto, sans-serif;
         background-color: $darkgrey;
@@ -932,35 +932,6 @@ h1{
     text-align: center;
     width: 10%;
     margin: auto;
-    .scrollbar{
-        position: absolute;
-        margin-left: 30px;
-        float: left;
-        height: 500px;
-        width: 65px;
-        overflow-y: scroll;
-        margin-bottom: 25px;
-        scroll-behavior: smooth;
-        cursor: pointer;
-        .force-overflow{
-            min-height: 1250px;
-        }
-    }
-
-    #style-2::-webkit-scrollbar-track{
-        border-radius: 10px;
-    }
-    
-    #style-2::-webkit-scrollbar{
-        width: 12px;
-        background-color: #ccc;
-        border-radius: 10px;
-    }
-    
-    #style-2::-webkit-scrollbar-thumb{
-        border-radius: 10px;
-        background-color: #1d1d1d;
-    }
 }
 
 #firstRow, #secRow{
@@ -970,63 +941,5 @@ h1{
     height: 100%;
     a{
         width: 100% !important;
-    }
-}
-
-#projects{
-    #quiz{
-        &::after{
-            content: "10-2018"
-        }
-    }
-    #cardmemory{
-        &::after{
-            content: "02-2019"
-        }
-    }
-    #tubedit{
-        &::after{
-            content: "04-2019"
-        }
-    }
-    #crime{
-        &::after{
-            content: "05-2019"
-        }
-    }
-    #evolution{
-        &::after{
-            content: "08-2019"
-        }
-    }
-    #filmer{
-        &::after{
-            content: "11-2019"
-        }
-    }
-    #tanky{
-        &::after{
-            content: "01-2020"
-        }
-    }
-    #deliciae{
-        &::after{
-            content: "03-2020"
-        }
-    }
-    #financer{
-        &::after{
-            content: "05-2020"
-        }
-    }
-    #portfolio{
-        &::after{
-            content: "06-2020"
-        }
-    }
-    #evolution_2{
-        &::after{
-            content: "Currently working on it"
-        }
     }
 }
