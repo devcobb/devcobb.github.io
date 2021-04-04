@@ -29,14 +29,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 17px !important;
   }
 
-  #rightBar {
-    padding-top: 20% !important;
-  }
   #rightBar h2 {
     font-size: 31px !important;
   }
   #rightBar .contactInfo {
     display: none !important;
+  }
+
+  .skillBox img {
+    width: 30px !important;
   }
 }
 @media only screen and (max-width: 1024px) and (max-height: 1366px) {
@@ -45,6 +46,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media only screen and (max-width: 1024px) {
+  #projects #projectsWrap .projectLoadingScreen {
+    position: static !important;
+  }
+
+  #loadMoreProjects {
+    top: 71% !important;
+  }
+
+  .wave {
+    display: none !important;
+  }
+
   #timeline {
     display: none !important;
   }
@@ -67,12 +80,13 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 
-  #projectBox a {
-    margin: 5px;
-    width: 30% !important;
+  #projectsBox {
+    width: 100% !important;
+    height: 85% !important;
   }
-  #projectBox a::after {
-    display: none !important;
+  #projectsBox a {
+    width: 50% !important;
+    height: 30% !important;
   }
 
   #projectsWrap {
@@ -113,10 +127,9 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     z-index: 10000000000000002000 !important;
     width: 100% !important;
-    height: 20% !important;
+    height: 10% !important;
     padding-top: 0 !important;
     flex-direction: column !important;
-    align-items: center !important;
   }
   #rightBar h2 {
     display: none !important;
@@ -139,11 +152,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #skillsBox {
+    border-bottom: 4px dashed #201f1f;
     z-index: 10000000000000002000 !important;
     justify-content: space-around !important;
     flex-direction: row !important;
     width: 100% !important;
-    height: 10% !important;
+    height: 5% !important;
   }
 }
 @media only screen and (max-width: 900px) and (min-width: 768px) {
@@ -162,6 +176,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media only screen and (max-width: 768px) {
+  #loadMoreProjects {
+    top: 75% !important;
+  }
+
   #desc p, #desc li {
     font-size: 15px !important;
   }
@@ -181,7 +199,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100% !important;
     border-left: none !important;
     height: auto !important;
-    border-bottom: 20px solid #1d1d1d;
     background-image: none !important;
   }
   .row h2 {
@@ -309,6 +326,18 @@ body, html {
   background: #262626;
 }
 
+#waveBoxMobile {
+  position: fixed;
+  top: 50%;
+  transition: all 0.3s;
+  opacity: 0;
+}
+#waveBoxMobile img {
+  width: 100%;
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
 #bg {
   display: flex;
   justify-content: center;
@@ -389,21 +418,23 @@ body, html {
   }
 }
 #mobileMenuBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: none;
   position: fixed;
   top: 3%;
   left: 90%;
-  width: 7%;
-  height: 2%;
+  border-radius: 50%;
   z-index: 10000000000000002000;
   cursor: pointer;
 }
 #mobileMenuBtn .mobileMenuElem {
-  width: 100%;
-  height: 25%;
+  width: 25px;
+  height: 3px;
   background: #ffffff;
   border-radius: 15px;
-  margin: 15% 0;
+  margin: 20% 0;
   transition: all 0.2s;
   transform-origin: 50% 50%;
 }
@@ -622,6 +653,23 @@ h1::after {
     width: 25px;
   }
 }
+.wave {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  z-index: 99;
+  width: 100%;
+  height: 25%;
+  transition: all 0.3s;
+}
+.wave img {
+  height: 100%;
+  width: 100%;
+}
+
 #about {
   display: flex;
   justify-content: flex-start;
@@ -629,10 +677,6 @@ h1::after {
   width: 100%;
   height: 0%;
   background-color: #efefef;
-  background-size: contain;
-  background-image: url("../img/wave2.png");
-  background-repeat: no-repeat;
-  background-position: 0 100%;
 }
 #about h2 {
   font-size: 61px;
@@ -647,12 +691,7 @@ h1::after {
   height: 100%;
   width: 25%;
   display: none;
-  border-left: 40px solid #1d1d1d;
-  background: #262626;
-  background-image: url("../img/rounds.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center 100%;
+  background: #201f1f;
 }
 #about #picture {
   width: 100%;
@@ -710,85 +749,85 @@ h1::after {
 #projects {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   perspective: 1000px;
   background-color: #efefef;
-  background-image: url("../img/wave.png");
-  background-repeat: no-repeat;
-  background-position: 0% 100%;
   height: 0%;
 }
-#projects a {
+#projects #projectsBox {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  position: relative;
-}
-#projects a::after {
-  position: absolute;
-  top: 15%;
-  left: -5%;
-  background: #ffffff;
-  border-radius: 15px;
-  padding: 0.25em 0.5em;
-  font-family: Roboto;
-  text-align: center;
-  letter-spacing: 3px;
-  color: #1d1d1d;
-  -webkit-box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
-  box-shadow: 1px 5px 16px -3px rgba(0, 0, 0, 0.51);
-  z-index: 2;
-}
-#projects #projectBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  margin-top: 4%;
+  width: 81%;
+  height: 65%;
 }
 #projects #projectsWrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  width: 83.35%;
-  transition-timing-function: ease-in-out;
-  transition: top 1s;
-}
-#projects .project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5% 0 0 0%;
-  width: auto;
+  flex-wrap: wrap;
   width: 100%;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  height: 65%;
 }
-#projects .project img {
+#projects #projectsWrap a {
   display: block;
-  width: 350px;
-  z-index: 1;
+  margin: 10px;
+  width: 30%;
+  height: 55%;
 }
-#projects #timeline {
-  width: 10px;
-  background: #1d1d1d;
+#projects #projectsWrap a .project {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #201f1f;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center center;
+}
+#projects #projectsWrap .projectLoadingScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #201f1f;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: center center;
+  transition: all 0.5s;
+}
+#projects #loadMoreProjects {
   position: fixed;
+  top: 55%;
+  font-family: Roboto, sans-serif;
+  background-color: #201f1f;
+  background-image: url("../img/plus.png");
+  background-position: 5% center;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  border-radius: 1px;
+  padding: 20px 20px 20px 50px;
+  margin-top: 5%;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s;
+  z-index: 999999;
+}
+#projects #loadMoreProjects:hover {
+  background-color: #181717;
 }
 #projects #skillsBox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #1d1d1d;
-  width: 5%;
+  background: #262626;
+  border-right: 4px dashed #201f1f;
+  width: 4%;
   height: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -808,10 +847,6 @@ h1::after {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-image: url("../img/bg2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
   position: relative;
   flex-direction: column;
   background-color: #262626;
@@ -887,7 +922,7 @@ h1::after {
   top: 25%;
   left: 10%;
   z-index: -1;
-  background: #1d1d1d;
+  background: #201f1f;
   width: 100%;
   height: 100%;
   content: "";
@@ -909,14 +944,6 @@ h1::after {
   }
 }
 
-@keyframes projectLoading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 #wrapper {
   position: absolute;
   z-index: 100000000000000020;
@@ -952,6 +979,18 @@ h1::after {
 #wrapper #style-2::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #1d1d1d;
+}
+
+#firstRow, #secRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 100%;
+}
+#firstRow a, #secRow a {
+  width: 100% !important;
 }
 
 #projects #quiz::after {

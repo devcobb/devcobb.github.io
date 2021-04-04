@@ -20,11 +20,11 @@
             <li data-id="2"></li>
         </ul>
     </nav>
-    <nav id="mobileMenuBtn" data-mode="hidden">
+    <div id="mobileMenuBtn" data-mode="hidden">
         <div class="mobileMenuElem" id="firstElem"></div>
         <div class="mobileMenuElem" id="midElem"></div>
         <div class="mobileMenuElem" id="lastElem"></div>
-    </nav>
+    </div>
     <div id="mobileMenu">
         <div class="mobileMenuElem active" data-id="0">Home</div>
         <div class="mobileMenuElem" data-id="1">About</div>
@@ -75,70 +75,28 @@
         </div>
     </section>
     <section id="projects" class="container">
-        <div id="projectBox">
-            <div id="wrapper">
-                <div class="scrollbar" id="style-2">
-                  <div class="force-overflow"></div>
-                </div>
+        <div id="projectsBox">
+            <div id="projectsWrap">
+                <a href="#">
+                    <div class="project" data-id="0"></div>
+                </a>
+                <a href="#">
+                    <div class="project" data-id="1"></div>
+                </a>
+                <a href="https://github.com/devcobb/Financer">
+                    <div class="project" data-id="2"> </div>
+                </a>
+                <a href="./deliciae/dist/index.html">
+                    <div class="project" data-id="3"></div>
+                </a>
+                <a href="./tanky/dist/index.html">
+                    <div class="project" data-id="4"></div>
+                </a>
+                <a href="https://github.com/devcobb/Filmer">
+                    <div class="project" data-id="5"></div>
+                </a>
             </div>
-          <div id="timeline"></div>
-          <div id="projectsWrap">
-            <a href="#" id="evolution_2">
-                <div class="project">
-                    <img src="dist/img/evolution_2.png" />
-                </div>
-            </a>
-            <a href="https://devcobb.github.io/" id="portfolio">
-                <div class="project">
-                    <img src="dist/img/portoflio.JPG" />
-                </div>
-            </a>
-            <a href="https://github.com/devcobb/Financer" id="financer">
-                <div class="project">
-                    <img src="dist/img/financer.JPG" />
-                </div>
-            </a>
-            <a href="dist/deliciae/html/index.html"  id="deliciae">
-                <div class="project">
-                    <img src="dist/img/deliciae.JPG" />
-                </div>
-            </a>
-            <a href="dist/tanky/html/index.html" id="tanky">
-                <div class="project">
-                    <img src="dist/img/tanky.JPG" />
-                </div>
-            </a>
-            <a href="https://github.com/devcobb/Filmer" id="filmer">
-                <div class="project">
-                    <img src="dist/img/filmer.JPG" />
-                </div>
-            </a>
-            <a href="dist/evolution/html/index.html" id="evolution">
-                <div class="project">
-                    <img src="dist/img/evolution.JPG" />
-                </div>
-            </a>
-            <a href="dist/crime/html/index.html" id="crime">
-                <div class="project">
-                    <img src="dist/img/crime.JPG" />
-                </div>
-            </a>
-            <a href="dist/tubedit/html/index.html" id="tubedit">
-                <div class="project">
-                    <img src="dist/img/tubedit.JPG" />
-                </div>
-            </a>
-            <a href="dist/cardmemory/html/index.html" id="cardmemory">
-                <div class="project">
-                    <img src="dist/img/cardmemory.JPG" />
-                </div>
-            </a>
-            <a href="dist/quiz/html/index.html" id="quiz">
-                <div class="project">
-                      <img src="dist/img/quiz.JPG" />
-                  </div>
-            </a>
-          </div>
+            <div id="loadMoreProjects">Show more projects</div>
         </div>
         <div id="skillsBox">
             <div class="skillBox">
@@ -161,13 +119,21 @@
             </div>
         </div>
         <div id="rightBar">
-            <h2 class="sectionHeader">Contact.</h2>
+            <h2 class="sectionHeader">Contact</h2>
             <div id="contactInfo">
                 <div class="contactWrapper">
                     <a href="https://github.com/devcobb">
                         <div class="contactBox">
                             GitHub
                             <img src="dist/img/icons/github.png" />
+                        </div>
+                    </a>
+                </div>
+                <div class="contactWrapper">
+                    <a href="https://www.linkedin.com/in/jakub-michalczyk-15a7471b0/">
+                        <div class="contactBox">
+                            Linkedin:
+                            <img src="dist/img/icons/linkedin.png" />
                         </div>
                     </a>
                 </div>
@@ -182,7 +148,7 @@
             </div>
         </div>
     </section>
-    <script src="dist/js/main.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>

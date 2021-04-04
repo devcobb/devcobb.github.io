@@ -20,7 +20,9 @@ let lastScrollPosition = 0;
 
 (function init() {
     loadingScreen();
-
+    if(!window.chrome){
+        document.querySelector("#mouseScroll").remove();
+    }
     window.addEventListener("load", hideLoadingScreen)
 
 
@@ -77,8 +79,10 @@ function mobileMenuToggle(){
     ];
 
     if(hamburger.dataset.mode === 'hidden'){
+    //    alert("hi")
         hamburger.dataset.mode = 'shown';
         lines[2].style = `margin-top:-10px;`;
+        lines[0].style = `margin: -6% 0;`;
         setTimeout( () => lines[0].style.transform = `rotate(45deg)`, 200);
         setTimeout( () => {
           lines[1].style.transform += `translateY(-200%) rotate(-45deg)`;
@@ -88,7 +92,7 @@ function mobileMenuToggle(){
     }
     else{
         hamburger.dataset.mode = 'hidden';
-        lines[2].style = `margin-top:5px;`;
+        lines[2].style = `margin-top: 5px;`;
         setTimeout( () => {
             lines[1].style.transform = `translateY(0.5px)`;
             lines[0].style.transform = `rotate(0deg)`;
@@ -133,10 +137,23 @@ function showPage(page){
     if(page === "#about"){
         document.querySelector(".row").style.display = "block";
 
+        createWave();
         canvasSetup();
         renderCircles();
         drawCircles();
         circlesAnimation();
+
+        if(window.screen.width <= 600){
+            let waveBox = document.createElement("div");
+
+            waveBox.id = "waveBoxMobile";
+            waveBox.innerHTML = `<img src="./dist/img/wave.png" />`;
+            document.querySelector("#about").appendChild(waveBox);
+            
+            setTimeout(() => {
+                document.querySelector("#waveBoxMobile") !== null ? document.querySelector("#waveBoxMobile").style.opacity = "1" : null;
+            }, 300);
+        }
 
         setTimeout(
             () => {
@@ -145,47 +162,157 @@ function showPage(page){
             300
         );
     }
+    else if(page === "#bg"){
+        if(document.querySelector("#waveBoxMobile") !== null){
+            document.querySelector("#waveBoxMobile").remove();
+        }
+        else if(document.querySelector(".wave") !== null){
+            document.querySelector(".wave").style.opacity = "0";
+
+            setTimeout(() => {
+                document.querySelector(".wave").remove();
+            }, 350);
+        }
+    }
     else if(page === "#projects"){
-        document.querySelector("#timeline").style.height = "100%";
-        if(window.screen.width > 1024){
-            setTimeout( () => {
-                document.querySelector("#projectsWrap").style.top = "-150%";
-                document.querySelector(".scrollbar").scrollTop = document.querySelector(".scrollbar").scrollHeight;
-                setTimeout( () => {
-                    setProjectsScrollBar();
-                }, 1000);
-            }, 500);
+        if(window.screen.width <= 1024){
+            fixProjectBoxForMobile();
         }
-        else{
-            setProjectsScrollBar();
+
+        if(document.querySelector("#waveBoxMobile") !== null){
+            document.querySelector("#waveBoxMobile").remove();
         }
+        createWave();
+        loadProjects();
+
+        document.querySelector("#loadMoreProjects").addEventListener("click", loadProjects)
     }
 
     document.querySelector(page).style.height = "100%";
 }
 
-function setProjectsScrollBar(){
-    document.querySelector(".scrollbar").addEventListener("scroll", e => {
-        if (lastScrollPosition <  document.querySelector(".scrollbar").scrollTop){
-            document.querySelector("#projectsWrap").style.top = calculateScrollPecentage();
-        } else {
-            document.querySelector("#projectsWrap").style.top = calculateScrollPecentage();
-        }
-        
-        lastScrollPosition = document.querySelector(".scrollbar").scrollTop;
-    }, false);
+function fixProjectBoxForMobile(){
+    let firstRow = document.createElement("div");
+    let secRow = document.createElement("div");
+    let i = 0;
+
+    firstRow.id = "firstRow";
+    secRow.id = "secRow";
+
+    if(document.querySelector("#firstRow") === null){
+        document.querySelectorAll("#projectsWrap a").forEach(prj => {
+            if(i < 3){
+                firstRow.appendChild(prj)
+            }
+            else{
+                secRow.appendChild(prj)
+            }
+    
+            i++;
+        });
+
+        document.querySelector("#projectsWrap").append(firstRow, secRow)
+    }
+    else{
+        document.querySelectorAll("#projectsWrap a").forEach(prj => {
+            if(i < 3){
+                document.querySelector("#firstRow").appendChild(prj)
+            }
+            else{
+                document.querySelector("#secRow").appendChild(prj)
+            }
+    
+            i++;
+        });
+    }
 }
 
-function calculateScrollPecentage(){
-    let maxPossibleScroll = 750;
-    let scrollPercent;
+function createWave(){
+    if(document.querySelector(".wave") === null){
+        let wave = document.createElement("div");
+        wave.className = "wave";
     
-    if(window.screen.width > 1024){
-        scrollPercent = ((100 * document.querySelector(".scrollbar").scrollTop) / maxPossibleScroll) * 1.5;
+        document.body.appendChild(wave);
+        document.querySelector(".wave").innerHTML = `<img src="dist/img/wave.png" />`;
+        document.querySelector(".wave").addEventListener("wheel", handleScroll);
     }
+}
 
-    return `-${scrollPercent}%`;
+function loadProjects(){
+    if(document.querySelector(".projectLoadingScreen") !== null){
+        return;
+    }
+        let avaiableProjects = [
+            {id: 0, url: "#", name: "Evolution 2", img: "dist/img/evolution_2.png"},
+            {id: 1, url: "#", name: "devcobb", img: "dist/img/portoflio.JPG"},
+            {id: 2, url: "https://github.com/devcobb/Financer", name: "Financer", img: "dist/img/financer.JPG"},
+            {id: 3, url: "dist/deliciae/html/index.html", name: "Deliciae", img: "dist/img/deliciae.JPG"},
+            {id: 4, url: "dist/tanky/html/index.html", name: "Tanky", img: "dist/img/tanky.JPG"},
+            {id: 5, url: "https://github.com/devcobb/Filmer", name: "Filmer", img: "dist/img/filmer.JPG"},
+            {id: 6, url: "dist/calendation/html/index.html", name: "Calendation", img: "dist/img/calendation.JPG"},
+            {id: 7, url: "dist/evolution/html/index.html", name: "Evolution", img: "dist/img/evolution.JPG"},
+            {id: 8, url: "dist/crime/html/index.html", name: "Crime", img: "dist/img/crime.JPG"},
+            {id: 9, url: "dist/tubedit/html/index.html", name: "Tubedit", img: "dist/img/tubedit.JPG"},
+            {id: 10, url: "dist/cardmemory/html/index.html", name: "Cardmemory", img: "dist/img/cardmemory.JPG"},
+            {id: 11, url: "dist/quiz/html/index.html", name: "Quiz App", img: "dist/img/quiz.JPG"},
+        ];
+    
+        loadingScreenProject();
+    
+    
+        setTimeout(
+            () => {
+    
+    
+                if(document.querySelector(".project").style.backgroundImage === ""){
+                    //Init
+                    document.querySelectorAll(".project").forEach(project => {
+                        project.parentNode.href = avaiableProjects[Number(project.dataset.id)].url;
+                        project.style.backgroundImage = `url('${avaiableProjects[Number(project.dataset.id)].img}')`;
+                    });
+    
+                    hideLoadingScreenProject();
+                }
+                else{
+                    if( Number(document.querySelectorAll(".project")[document.querySelectorAll(".project").length - 1].dataset.id) !== avaiableProjects[avaiableProjects.length - 1].id){
+                        for(let i = 0; i < document.querySelectorAll(".project").length; i++){
+                            document.querySelectorAll(".project")[i].parentNode.href= avaiableProjects[i + document.querySelectorAll(".project").length].url;
+                            document.querySelectorAll(".project")[i].style.backgroundImage = `url(${avaiableProjects[i + document.querySelectorAll(".project").length].img})`;
+                            document.querySelectorAll(".project")[i].dataset.id = i + document.querySelectorAll(".project").length;
+                       }
+                    }
+                    else{
+                        for(let i = 0; i < document.querySelectorAll(".project").length; i++){
+                            document.querySelectorAll(".project")[i].parentNode.href= avaiableProjects[i].url;
+                            document.querySelectorAll(".project")[i].style.backgroundImage = `url(${avaiableProjects[i].img})`;
+                            document.querySelectorAll(".project")[i].dataset.id = i;
+                       }
+                    }
+    
+    
+                   hideLoadingScreenProject();
+                }
+            }, 600
+        )
+}
 
+function loadingScreenProject(){
+    document.querySelectorAll(".project").forEach((project) => {
+        let loadingBox = document.createElement("div");
+    
+        loadingBox.className = "projectLoadingScreen";
+        project.appendChild(loadingBox)
+    });
+}
+
+function hideLoadingScreenProject(){
+    document.querySelectorAll(".projectLoadingScreen").forEach((project) => {
+        project.style.opacity = 0;
+    });
+
+    setTimeout(() => {
+        document.querySelectorAll(".projectLoadingScreen").forEach(project => project.remove());
+    }, 500)
 }
 
 function updatePageStatus(idx){
@@ -291,8 +418,8 @@ function renderCircles(){
         circles.push(
             {
                 x: Math.floor(Math.random() * c.width),
-                y: numOfCircl >= 50 ? Math.floor(Math.random() * c.height) : c.height,
-                size: Math.floor(Math.random() * (20 - 2)) + 2,
+                y: numOfCircl >= 50 ? Math.floor(Math.random() * c.height) :  Math.floor(c.height + (Math.random() * 150)),
+                size: window.screen.width > 768 ? Math.floor(Math.random() * (20 - 2)) + 2 : Math.floor(Math.random() * (15 - 1)) + 1,
                 color: randomColor()
             }
         )
