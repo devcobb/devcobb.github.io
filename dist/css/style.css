@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   #projectsBox a {
     width: 50% !important;
-    height: 30% !important;
+    height: 25% !important;
   }
 
   #projectsWrap {
@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0 !important;
     width: 100% !important;
     border-left: none !important;
-    height: 65% !important;
+    height: 80% !important;
     background-image: none !important;
   }
   .row h2 {
@@ -328,7 +328,7 @@ body, html {
 
 #waveBoxMobile {
   position: absolute;
-  top: 64.5%;
+  top: 79.5%;
   transition: all 0.3s;
   opacity: 0;
 }

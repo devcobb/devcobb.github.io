@@ -64,6 +64,7 @@ function handleMenu(e){
         }
     });
 
+   
     hidePage(currentPage[0].page);
     showPage(nextPage[0].page);
     updatePageStatus(nextPage[0].id)
@@ -79,7 +80,6 @@ function mobileMenuToggle(){
     ];
 
     if(hamburger.dataset.mode === 'hidden'){
-    //    alert("hi")
         hamburger.dataset.mode = 'shown';
         lines[2].style = `margin-top:-10px;`;
         lines[0].style = `margin: -6% 0;`;
@@ -120,13 +120,6 @@ function hidePage(page){
 
     if(page === "#about"){
         document.querySelector(".row").style.opacity = "0";
-        setTimeout(
-            () => {
-                document.querySelector(".row").style.display = "none"
-            },
-            300
-        );
-
         circles = [];
   
         return cancelAnimationFrame(anim)
