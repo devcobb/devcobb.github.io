@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #loadMoreProjects {
+    margin-top: 0 !important;
     top: 71% !important;
   }
 
@@ -958,10 +959,10 @@ h1::after {
 #firstRow, #secRow {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 50%;
-  height: 100%;
+  height: 75%;
 }
 #firstRow a, #secRow a {
   width: 100% !important;
