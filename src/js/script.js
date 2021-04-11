@@ -119,7 +119,7 @@ function hidePage(page){
     document.querySelector(page).style.height = 0;
 
     if(page === "#about"){
-        document.querySelector(".row").style.opacity = "0";
+        document.querySelector(".row").style.display = "none"
         circles = [];
   
         return cancelAnimationFrame(anim)
@@ -163,7 +163,7 @@ function showPage(page){
             document.querySelector(".wave").style.opacity = "0";
 
             setTimeout(() => {
-                document.querySelector(".wave").remove();
+                document.querySelector(".wave") !== null ? document.querySelector(".wave").remove() : null;
             }, 350);
         }
     }
