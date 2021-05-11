@@ -236,7 +236,7 @@ function loadProjects(){
         return;
     }
         let avaiableProjects = [
-            {id: 0, url: "#", name: "Evolution 2", img: "dist/img/evolution_2.png"},
+            {id: 0, url: "https://video-finder.netlify.app/", name: "Video Finder", img: "dist/img/video-finder.jpg"},
             {id: 1, url: "#", name: "devcobb", img: "dist/img/portoflio.JPG"},
             {id: 2, url: "https://github.com/devcobb/Financer", name: "Financer", img: "dist/img/financer.JPG"},
             {id: 3, url: "dist/deliciae/html/index.html", name: "Deliciae", img: "dist/img/deliciae.JPG"},
